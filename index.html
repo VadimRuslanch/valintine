@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Валентинка</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container" id="greeting">
+    <h1>Это Валентинка для тебя, Саша!</h1>
+    <p>Но, чтобы её получить, нужно отгадать пару загадок.</p>
+    <button onclick="nextScreen('greeting', 'puzzle1')">Далее</button>
+</div>
+
+<div class="container" id="puzzle1" style="display: none;">
+    <h2>Выбери правильное сердце</h2>
+    <div class="hearts" id="hearts-container"></div>
+    <p id="result1"></p>
+</div>
+
+<div class="container" id="question" style="display: none;">
+    <h2>Вопрос</h2>
+    <p>Ваш вопрос здесь</p>
+    <button onclick="nextScreen('question', 'any')">Далее</button>
+</div>
+
+<div class="container" id="any" style="display: none;">
+    <h2>Любой блок</h2>
+    <p>Любой контент здесь</p>
+    <button onclick="nextScreen('any', 'finish')">Далее</button>
+</div>
+
+<div class="container" id="finish" style="display: none;">
+    <h2>Финал</h2>
+    <p>Финальный контент здесь</p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
