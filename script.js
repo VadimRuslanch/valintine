@@ -4,7 +4,7 @@ let currentStage = 1;
 let currentQuestion = 0;
 let correctAnswers = 0;
 
-const numberOfHearts = 2; // Поменя на свое значение. Количество сердец на первом шаге
+const numberOfHearts = 10; // Поменя на свое значение. Количество сердец на первом шаге
 const secondStepWords = ["Тепло", "Дизайн", "Радость"]; // Массив слов для второго шага
 
 const quizQuestions = [ // Массив вопросов для третьего шага
