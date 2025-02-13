@@ -1,41 +1,57 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Валентинка</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Valentine's Quest</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./fireworks.css">
 </head>
 <body>
-<div class="container" id="greeting">
-    <h1>Это Валентинка для тебя, Саша!</h1>
-    <p>Но, чтобы её получить, нужно отгадать пару загадок.</p>
-    <button onclick="nextScreen('greeting', 'puzzle1')">Далее</button>
+<div class="keys">
+    <span class="key" id="key1">🔑</span>
+    <span class="key" id="key2">🔑</span>
+    <span class="key" id="key3">🔑</span>
 </div>
 
-<div class="container" id="puzzle1" style="display: none;">
-    <h2>Выбери правильное сердце</h2>
-    <div class="hearts" id="hearts-container"></div>
-    <p id="result1"></p>
+<div id="welcome-screen">
+    <h1>Эта валентинка для тебя!</h1>
+    <p>Но чтобы получить ее, тебе нужно найти три ключика</p>
+    <button onclick="startQuest()">Погнали!</button>
 </div>
 
-<div class="container" id="question" style="display: none;">
-    <h2>Вопрос</h2>
-    <p>Ваш вопрос здесь</p>
-    <button onclick="nextScreen('question', 'any')">Далее</button>
+<div id="stage1" class="hidden">
+    <h2>Этап 1: Найди ключ</h2>
+    <div id="hearts-container"></div>
+    <p class="message hidden" id="stage1-message"></p>
 </div>
 
-<div class="container" id="any" style="display: none;">
-    <h2>Любой блок</h2>
-    <p>Любой контент здесь</p>
-    <button onclick="nextScreen('any', 'finish')">Далее</button>
+<div id="stage2" class="hidden">
+    <h2>Этап 2: Расшифруй послание</h2>
+    <p id="encrypted-message"></p>
+    <input type="text" id="decrypted-input" placeholder="Введите расшифрованный текст">
+    <button onclick="checkDecryption()">Проверить</button>
+    <p class="message hidden" id="stage2-message"></p>
 </div>
 
-<div class="container" id="finish" style="display: none;">
-    <h2>Финал</h2>
-    <p>Финальный контент здесь</p>
+<div id="stage3" class="hidden">
+    <h2>Этап 3: Собери код</h2>
+    <div id="quiz-container" class="quiz-container"></div>
+    <p class="message hidden" id="stage3-message"></p>
 </div>
 
-<script src="script.js"></script>
+<div class="firework-container hidden" id="fireworks">
+    <div class="firework"></div>
+    <div class="firework"></div>
+    <div class="firework"></div>
+</div>
+<div id="final-screen" class="hidden fullscreen">
+    <div class="final-heart-container"><div onclick="finalHeart()" id="final-heart" class="final-heart pulsating">❤️</div><div style="text-align: center;">👆<br/>Кликни меня</div></div>
+    <div class="heart-message"></div>
+    <p class="hiden" id="valentintext"></p>
+</div>
+
+<script src="./script.js"></script>
 </body>
 </html>
+
