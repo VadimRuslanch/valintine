@@ -68,9 +68,10 @@ body {
 }
 
 .fullscreen p {
+    width: 90%;
     font-size: 2em;
     margin-top: 20px;
-    color: #8b0000;
+    color: #e5d7d7;
 }
 @keyframes beat {
     0% { transform: scale(1); }
